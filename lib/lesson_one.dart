@@ -7,10 +7,14 @@ class lessonOne extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(),
+      theme: ThemeData(
+        primarySwatch: Colors.teal,
+        outlinedButtonTheme: OutlinedButtonThemeData(
+            style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.teal[200]))),
+      ),
       home: Scaffold(
         appBar: AppBar(
-
           backgroundColor: Colors.transparent,
           title: TextButton(
             onPressed: () {
@@ -26,8 +30,6 @@ class lessonOne extends StatelessWidget {
                   fontWeight: FontWeight.w700,
                 ),
               ),
-              
-              
             ),
             child: const Text('USELY'),
           ),
@@ -46,6 +48,17 @@ class lessonOne extends StatelessWidget {
               )
             ],
           ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(5)),
+              side: BorderSide(
+                  color: Colors.deepOrangeAccent,
+                  width: 1,
+                  style: BorderStyle.solid)),
+          splashColor: Colors.red,
+          child: const Icon(Icons.add),
         ),
       ),
     );
